@@ -1,0 +1,200 @@
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 0.1fr;
+    grid-template-areas: 
+    "header"
+    "calccontainer"
+    "footer";
+}
+body{
+    background-color: #B1D4E0;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#header{
+    margin-top: 20px;
+    padding-top: 5px;
+    text-align: center;
+    grid-area: header;
+    font-size: 40px;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#calc-body{
+    margin-top: 80px;
+    background-color: #0C2D48;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #0C2D48;
+    border-radius: 15px;
+    display: grid;
+    grid-gap: 6px;
+    height: 600px;
+    min-width: 700px;
+    grid-template-columns: repeat(4, 0.5fr);
+    grid-template-rows: repeat(6, 0.5fr);
+    grid-template-areas:
+    "screen screen screen screen"
+    "btn-clr btn-clr btn-del btn-del"
+    "b7 b8 b9 div"
+    "b4 b5 b6 mult"
+    "b1 b2 b3 min"
+    "dot b0 eql pls";
+
+    /*preventing user select*/
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+
+.calc-button{
+    background-color: #2E8BC0;
+    border-radius: 5px;
+    text-align: center;
+}
+.calc-button:hover{
+    background-color: #6d98b1;
+}
+
+.dig-btn{
+    background-color: #2E8BC0;
+    border-radius: 5px;
+    text-align: center;
+}
+.dig-btn:hover{
+    background-color: #6d98b1;
+}
+
+#dig-dot{
+    background-color: #2E8BC0;
+    border-radius: 5px;
+    text-align: center;
+}
+#dig-dot:hover{
+    background-color: #6d98b1;
+}
+
+.op-button{
+    background-color: #2E8BC0;
+    border-radius: 5px;
+    text-align: center;
+}
+.op-button:hover{
+    background-color: #6d98b1;
+}
+
+
+
+#calc-screen{
+    border-radius: 5px;
+    background-color: #C3E0E5;
+    grid-area: screen;
+    font-size: 30px;
+    text-align: right;
+    padding: 30px 10px 20px 10px;
+}
+
+#dig-dot{
+    grid-area: dot;
+}
+
+#dig-0{
+    grid-area: b0;
+}
+
+#dig-1{
+    grid-area: b1;
+}
+
+#dig-2{
+    grid-area: b2;
+}
+
+#dig-3{
+    grid-area: b3;
+}
+
+#dig-4{
+    grid-area: b4;
+}
+
+#dig-5{
+    grid-area: b5;
+}
+
+#dig-6{
+    grid-area: b6;
+}
+
+#dig-7{
+    grid-area: b7;
+}
+
+#dig-8{
+    grid-area: b8;
+}
+
+#dig-9{
+    grid-area: b9;
+}
+
+#btn-clear{
+    grid-area: btn-clr;
+}
+
+#btn-delete{
+    grid-area: btn-del;
+}
+
+#op-div{
+    grid-area: div;
+}
+
+#op-add{
+    grid-area: pls;
+}
+
+#op-multiply{
+    grid-area: mult;
+}
+
+#op-subtr{
+    grid-area: min;
+}
+
+#op-eql{
+    grid-area: eql;
+}
+
+
+#calc-container{
+    grid-area: calccontainer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#footer{
+    margin-top: 30px;
+    grid-area: footer;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 800px){
+    #calc-body{
+        min-width: 400px;
+    }
+}
